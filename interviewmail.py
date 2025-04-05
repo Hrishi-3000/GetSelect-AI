@@ -1,4 +1,3 @@
-# interviewmail.py
 
 def send_interview_emails():
     import sqlite3
@@ -52,7 +51,7 @@ def send_interview_emails():
 
         message.attach(MIMEText(body, 'plain'))
         server.send_message(message)
-        print(f"✅ Email sent to {name} ({email})")
+        print(f" Email sent to {name} ({email})")
 
     server.quit()
     print("📬 All interview emails sent!")
