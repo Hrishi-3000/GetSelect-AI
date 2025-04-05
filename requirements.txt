@@ -1,0 +1,10 @@
+PyPDF2==3.0.1
+nltk==3.8.1
+spacy==3.7.2
+tk==0.1.0
+matplotlib==3.8.3
+pandas==2.2.1
+openpyxl==3.1.2
+scikit-learn==1.4.1
+sqlite-utils==3.36
+email-validator==2.1.0.post1
