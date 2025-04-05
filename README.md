@@ -30,7 +30,7 @@ Multi-agent system:
 
 ---
 
-## 📦 Requirements
+##  Requirements
 
 Install dependencies with:
 
