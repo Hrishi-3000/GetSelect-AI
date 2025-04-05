@@ -4,15 +4,12 @@ import pandas as pd
 def run():
     print("📊 Populating database with structured candidate-job match data...")
 
-    # Load CSV
     csv_file = "skill_experience_percentile_matching.csv"
     df = pd.read_csv(csv_file)
 
-    # Connect to SQLite database
     conn = sqlite3.connect("jd_cv_matching.db")
     cursor = conn.cursor()
 
-    # --- TABLE CREATION ---
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS job_descriptions (
         jd_id INTEGER PRIMARY KEY,
@@ -103,7 +100,6 @@ def run():
             skill_percentile, exp_bonus, final_score
         ))
 
-        # Shortlisted candidates
         if selected == "Yes":
             cursor.execute('''
                 INSERT OR IGNORE INTO shortlisted_candidates (candidate_id, jd_id, email, final_score)
