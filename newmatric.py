@@ -4,7 +4,6 @@ import re
 from tqdm import tqdm
 from scipy.stats import percentileofscore
 
-# --- Helper functions ---
 def extract_skills(text):
     keywords = [
         "Python", "Java", "C++", "JavaScript", "R", "SQL", "Scala", "Solidity", "C/C++", "Assembly Language",
@@ -55,9 +54,8 @@ def extract_name(text):
             return cleaned_line
     return "Not found"
 
-# --- Main runner ---
 def run():
-    print("📄 Matching CVs to job descriptions...")
+    print(" Matching CVs to job descriptions...")
 
     jd_df = pd.read_csv("jd_summary_output.csv")
     cv_dir = "convytext"
@@ -113,4 +111,4 @@ def run():
 
     output_df = pd.DataFrame(final_results)
     output_df.to_csv("skill_experience_percentile_matching.csv", index=False)
-    print("✅ Matching completed. Saved to skill_experience_percentile_matching.csv")
+    print(" Matching completed. Saved to skill_experience_percentile_matching.csv")
