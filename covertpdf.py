@@ -1,13 +1,7 @@
-# JDParsing.py
-
 import pandas as pd
 import re
 import spacy
-
-# Load spaCy's English model once
 nlp = spacy.load("en_core_web_sm")
-
-# Define keyword lists
 skill_keywords = [kw.lower() for kw in [
     "Python", "Java", "C++", "JavaScript", "R", "SQL", "Scala", "Solidity", "C/C++", "Assembly Language",
     "TensorFlow", "PyTorch", "Scikit-learn", "React", "Node.js", "ROS", "AWS", "Azure", "Google Cloud",
@@ -23,8 +17,6 @@ skill_keywords = [kw.lower() for kw in [
 
 qualification_keywords = ["bachelor", "master", "ph.d", "mba", "diploma"]
 experience_pattern = r"(\d+)\+?\s*(?:years|yrs)"
-
-# Helper functions
 def extract_skills(text):
     text_lower = text.lower()
     return list({kw for kw in skill_keywords if kw in text_lower})
@@ -52,7 +44,6 @@ def extract_summary(text):
         "Responsibilities": responsibilities
     }
 
-# ✅ Main callable function
 def parse_jd_csv(input_csv='job_description.csv', output_csv='jd_summary_output.csv'):
     df = pd.read_csv(input_csv, encoding='ISO-8859-1')
 
@@ -65,7 +56,7 @@ def parse_jd_csv(input_csv='job_description.csv', output_csv='jd_summary_output.
     summary_df = pd.DataFrame(summaries)[['Job Title', 'Skills', 'Qualifications', 'Experience', 'Responsibilities']]
     summary_df.to_csv(output_csv, index=False)
 
-    print(f"✅ JD summaries extracted and saved to {output_csv}")
+    print(f" JD summaries extracted and saved to {output_csv}")
 def run():
     import os
     from PyPDF2 import PdfReader
@@ -88,6 +79,6 @@ def run():
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write(text)
 
-            print(f"✅ Converted: {pdf_file} -> {output_filename}")
+            print(f" Converted: {pdf_file} -> {output_filename}")
         except Exception as e:
-            print(f"❌ Failed to convert {pdf_file}: {e}")
+            print(f" Failed to convert {pdf_file}: {e}")
