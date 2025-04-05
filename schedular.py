@@ -1,4 +1,3 @@
-# schedular.py
 
 def schedule_interviews():
     import sqlite3
@@ -45,4 +44,4 @@ def schedule_interviews():
 
     conn.commit()
     conn.close()
-    print("✅ Interview scheduling complete.")
+    print(" Interview scheduling complete.")
