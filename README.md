@@ -6,14 +6,14 @@ An AI-powered recruitment automation system built by **DuelBot** (Hrishikesh & R
 
 ##  Features
 
-- ✅ Automatically parses **Job Descriptions (JDs)** using NLP
-- ✅ Extracts and processes **resumes (CVs)** from PDFs
-- ✅ Calculates **AI-based match percentage** between JDs and CVs
-- ✅ Filters and **shortlists candidates** based on match threshold (e.g. ≥ 80%)
-- ✅ **Schedules interviews** for shortlisted candidates
-- ✅ Sends **personalized interview emails**
-- ✅ Interactive **Tkinter-based GUI dashboard**
-- ✅ Real-time **status, logs, and countdown timer**
+-  Automatically parses **Job Descriptions (JDs)** using NLP
+-  Extracts and processes **resumes (CVs)** from PDFs
+-  Calculates **AI-based match percentage** between JDs and CVs
+-  Filters and **shortlists candidates** based on match threshold (e.g. ≥ 80%)
+-  **Schedules interviews** for shortlisted candidates
+-  Sends **personalized interview emails**
+-  Interactive **Tkinter-based GUI dashboard**
+-  Real-time **status, logs, and countdown timer**
 
 ---
 
