@@ -1,11 +1,8 @@
 import pandas as pd
 import re
 import spacy
-
-# Load spaCy's English model
 nlp = spacy.load("en_core_web_sm")
 
-# Keywords
 skill_keywords = [kw.lower() for kw in [
     "Python", "Java", "C++", "JavaScript", "R", "SQL", "Scala", "Solidity", "C/C++", "Assembly Language",
     "TensorFlow", "PyTorch", "Scikit-learn", "React", "Node.js", "ROS", "AWS", "Azure", "Google Cloud",
@@ -21,7 +18,6 @@ skill_keywords = [kw.lower() for kw in [
 qualification_keywords = ["bachelor", "master", "ph.d", "mba", "diploma"]
 experience_pattern = r"(\d+)\+?\s*(?:years|yrs)"
 
-# --- Extractors ---
 def extract_skills(text):
     return list({kw for kw in skill_keywords if kw in text.lower()})
 
@@ -46,12 +42,9 @@ def extract_summary(text):
         "Experience": experience,
         "Responsibilities": responsibilities
     }
-
-# --- Run Function ---
 def run():
-    print("🔍 Parsing job descriptions...")
+    print(" Parsing job descriptions...")
 
-    # Load CSV
     df = pd.read_csv("job_description.csv", encoding='ISO-8859-1')
 
     summaries = []
@@ -64,4 +57,4 @@ def run():
     summary_df = pd.DataFrame(summaries)[['Job Title', 'Skills', 'Qualifications', 'Experience', 'Responsibilities']]
     summary_df.to_csv("jd_summary_output.csv", index=False)
 
-    print("✅ JD summary saved to jd_summary_output.csv")
+    print(" JD summary saved to jd_summary_output.csv")
