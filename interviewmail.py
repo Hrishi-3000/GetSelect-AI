@@ -23,9 +23,10 @@ def send_interview_emails():
     candidates = cursor.fetchall()
     conn.close()
 
-    sender_email = "hrishikesh172003@gmail.com"
-    password = "cowi yljp zmbj gcfv"
-
+    
+    sender_email = "hriro894@gmail.com"
+    password = "ssxu gwrk dknc gyhw"
+    
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(sender_email, password)
